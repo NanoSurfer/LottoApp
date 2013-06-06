@@ -69,7 +69,7 @@ namespace PlayLotto
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            Random rand = new Random(); // Random number generato
+            Random rand = new Random(); // Random number generator
             int[] randValues = new int[6]; //Array to hold random values
             int number = 0;
 
@@ -82,15 +82,15 @@ namespace PlayLotto
                 while (lottoNumbers < 6)
                 {
                     number = rand.Next(1, 49);
-                    if (Array.IndexOf(randValues, number) == -1)
+                    if (Array.IndexOf(randValues, number) == -1) //
                     {
                         randValues[lottoNumbers] = number;
                         lottoNumbers++;
                     }
-                 }
-                
-                Array.Sort(randValues);               
-                       
+                }
+
+                Array.Sort(randValues);
+
                 // Display the values in the list box area
                 listNumbers.Items.Add(randValues[0] + "\t" + randValues[1] + "\t" + randValues[2] +
                         "\t" + randValues[3] + "\t" + randValues[4] + "\t" + randValues[5]);
@@ -102,10 +102,10 @@ namespace PlayLotto
             listNumbers.Items.Clear();
         }
 
-        private void mnuClearTicket_Click(object sender, EventArgs e)
+        private void btnAddToLine_Click(object sender, EventArgs e)
         {
-            listNumbers.Items.Clear();
+            //textBox1.Text = cmbNumber2.Items.Add();
+            //cmbNumber2.Items.IndexOf();
         }
-
     }
 }

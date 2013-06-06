@@ -30,7 +30,25 @@
         {
             this.tabLotto = new System.Windows.Forms.TabControl();
             this.tabQuickPick = new System.Windows.Forms.TabPage();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.listNumbers = new System.Windows.Forms.ListBox();
+            this.btnPlay = new System.Windows.Forms.Button();
+            this.cmbNumbers = new System.Windows.Forms.ComboBox();
+            this.lblNumLines = new System.Windows.Forms.Label();
             this.tabSelectOwnNum = new System.Windows.Forms.TabPage();
+            this.btnClearTicket = new System.Windows.Forms.Button();
+            this.listNumbers2 = new System.Windows.Forms.ListBox();
+            this.btnAddLine = new System.Windows.Forms.Button();
+            this.btnClearLine = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAddToLine = new System.Windows.Forms.Button();
+            this.cmbNumber2 = new System.Windows.Forms.ComboBox();
+            this.lblLine = new System.Windows.Forms.Label();
             this.lblNumber = new System.Windows.Forms.Label();
             this.myMenuStrip = new System.Windows.Forms.MenuStrip();
             this.mnuClear = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,24 +57,6 @@
             this.subMenuSelectionTicket = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClearLine = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClearTickets = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblNumLines = new System.Windows.Forms.Label();
-            this.cmbNumbers = new System.Windows.Forms.ComboBox();
-            this.btnPlay = new System.Windows.Forms.Button();
-            this.listNumbers = new System.Windows.Forms.ListBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.lblLine = new System.Windows.Forms.Label();
-            this.cmbNumber2 = new System.Windows.Forms.ComboBox();
-            this.btnAddToLine = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.btnClearLine = new System.Windows.Forms.Button();
-            this.btnAddLine = new System.Windows.Forms.Button();
-            this.listNumbers2 = new System.Windows.Forms.ListBox();
-            this.btnClearTicket = new System.Windows.Forms.Button();
             this.tabLotto.SuspendLayout();
             this.tabQuickPick.SuspendLayout();
             this.tabSelectOwnNum.SuspendLayout();
@@ -89,6 +89,54 @@
             this.tabQuickPick.UseVisualStyleBackColor = true;
             this.tabQuickPick.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(238, 219);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear Ticket";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // listNumbers
+            // 
+            this.listNumbers.FormattingEnabled = true;
+            this.listNumbers.Location = new System.Drawing.Point(13, 34);
+            this.listNumbers.Name = "listNumbers";
+            this.listNumbers.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listNumbers.Size = new System.Drawing.Size(300, 173);
+            this.listNumbers.TabIndex = 3;
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.Location = new System.Drawing.Point(160, 5);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(136, 23);
+            this.btnPlay.TabIndex = 2;
+            this.btnPlay.Text = "Play Lotto Quick Pick";
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // cmbNumbers
+            // 
+            this.cmbNumbers.FormattingEnabled = true;
+            this.cmbNumbers.Location = new System.Drawing.Point(99, 7);
+            this.cmbNumbers.Name = "cmbNumbers";
+            this.cmbNumbers.Size = new System.Drawing.Size(40, 21);
+            this.cmbNumbers.TabIndex = 1;
+            this.cmbNumbers.SelectedIndexChanged += new System.EventHandler(this.cmbNumbers_SelectedIndexChanged);
+            // 
+            // lblNumLines
+            // 
+            this.lblNumLines.AutoSize = true;
+            this.lblNumLines.Location = new System.Drawing.Point(6, 10);
+            this.lblNumLines.Name = "lblNumLines";
+            this.lblNumLines.Size = new System.Drawing.Size(86, 13);
+            this.lblNumLines.TabIndex = 0;
+            this.lblNumLines.Text = "Number Of Lines";
+            this.lblNumLines.Click += new System.EventHandler(this.label2_Click);
+            // 
             // tabSelectOwnNum
             // 
             this.tabSelectOwnNum.Controls.Add(this.btnClearTicket);
@@ -113,6 +161,119 @@
             this.tabSelectOwnNum.Text = "Select Own Numbers";
             this.tabSelectOwnNum.UseVisualStyleBackColor = true;
             this.tabSelectOwnNum.Click += new System.EventHandler(this.tabSelectOwnNum_Click);
+            // 
+            // btnClearTicket
+            // 
+            this.btnClearTicket.Location = new System.Drawing.Point(232, 261);
+            this.btnClearTicket.Name = "btnClearTicket";
+            this.btnClearTicket.Size = new System.Drawing.Size(75, 24);
+            this.btnClearTicket.TabIndex = 13;
+            this.btnClearTicket.Text = "Clear Ticket";
+            this.btnClearTicket.UseVisualStyleBackColor = true;
+            // 
+            // listNumbers2
+            // 
+            this.listNumbers2.FormattingEnabled = true;
+            this.listNumbers2.Location = new System.Drawing.Point(9, 117);
+            this.listNumbers2.Name = "listNumbers2";
+            this.listNumbers2.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listNumbers2.Size = new System.Drawing.Size(298, 134);
+            this.listNumbers2.TabIndex = 12;
+            // 
+            // btnAddLine
+            // 
+            this.btnAddLine.Location = new System.Drawing.Point(232, 82);
+            this.btnAddLine.Name = "btnAddLine";
+            this.btnAddLine.Size = new System.Drawing.Size(75, 23);
+            this.btnAddLine.TabIndex = 11;
+            this.btnAddLine.Text = "Add Line";
+            this.btnAddLine.UseVisualStyleBackColor = true;
+            // 
+            // btnClearLine
+            // 
+            this.btnClearLine.Location = new System.Drawing.Point(232, 53);
+            this.btnClearLine.Name = "btnClearLine";
+            this.btnClearLine.Size = new System.Drawing.Size(75, 23);
+            this.btnClearLine.TabIndex = 10;
+            this.btnClearLine.Text = "Clear Line";
+            this.btnClearLine.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(193, 55);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(23, 20);
+            this.textBox6.TabIndex = 9;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(156, 55);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(23, 20);
+            this.textBox5.TabIndex = 8;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(119, 55);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(23, 20);
+            this.textBox4.TabIndex = 7;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(82, 55);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(23, 20);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(46, 55);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(23, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(23, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btnAddToLine
+            // 
+            this.btnAddToLine.Location = new System.Drawing.Point(182, 5);
+            this.btnAddToLine.Name = "btnAddToLine";
+            this.btnAddToLine.Size = new System.Drawing.Size(75, 23);
+            this.btnAddToLine.TabIndex = 3;
+            this.btnAddToLine.Text = "Add to Line";
+            this.btnAddToLine.UseVisualStyleBackColor = true;
+            this.btnAddToLine.Click += new System.EventHandler(this.btnAddToLine_Click);
+            // 
+            // cmbNumber2
+            // 
+            this.cmbNumber2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNumber2.FormattingEnabled = true;
+            this.cmbNumber2.Location = new System.Drawing.Point(59, 7);
+            this.cmbNumber2.Name = "cmbNumber2";
+            this.cmbNumber2.Size = new System.Drawing.Size(116, 21);
+            this.cmbNumber2.TabIndex = 2;
+            // 
+            // lblLine
+            // 
+            this.lblLine.AutoSize = true;
+            this.lblLine.Location = new System.Drawing.Point(6, 37);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(30, 13);
+            this.lblLine.TabIndex = 1;
+            this.lblLine.Text = "Line:";
             // 
             // lblNumber
             // 
@@ -157,7 +318,7 @@
             this.mnuClearTicket.Name = "mnuClearTicket";
             this.mnuClearTicket.Size = new System.Drawing.Size(152, 22);
             this.mnuClearTicket.Text = "Clear Ticket";
-            this.mnuClearTicket.Click += new System.EventHandler(this.mnuClearTicket_Click);
+            this.mnuClearTicket.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // subMenuSelectionTicket
             // 
@@ -179,166 +340,6 @@
             this.mnuClearTickets.Name = "mnuClearTickets";
             this.mnuClearTickets.Size = new System.Drawing.Size(141, 22);
             this.mnuClearTickets.Text = "Clear Tickets";
-            // 
-            // lblNumLines
-            // 
-            this.lblNumLines.AutoSize = true;
-            this.lblNumLines.Location = new System.Drawing.Point(6, 10);
-            this.lblNumLines.Name = "lblNumLines";
-            this.lblNumLines.Size = new System.Drawing.Size(86, 13);
-            this.lblNumLines.TabIndex = 0;
-            this.lblNumLines.Text = "Number Of Lines";
-            this.lblNumLines.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // cmbNumbers
-            // 
-            this.cmbNumbers.FormattingEnabled = true;
-            this.cmbNumbers.Location = new System.Drawing.Point(99, 7);
-            this.cmbNumbers.Name = "cmbNumbers";
-            this.cmbNumbers.Size = new System.Drawing.Size(40, 21);
-            this.cmbNumbers.TabIndex = 1;
-            this.cmbNumbers.SelectedIndexChanged += new System.EventHandler(this.cmbNumbers_SelectedIndexChanged);
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.Location = new System.Drawing.Point(160, 5);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(136, 23);
-            this.btnPlay.TabIndex = 2;
-            this.btnPlay.Text = "Play Lotto Quick Pick";
-            this.btnPlay.UseVisualStyleBackColor = true;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // listNumbers
-            // 
-            this.listNumbers.FormattingEnabled = true;
-            this.listNumbers.Location = new System.Drawing.Point(13, 34);
-            this.listNumbers.Name = "listNumbers";
-            this.listNumbers.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listNumbers.Size = new System.Drawing.Size(300, 173);
-            this.listNumbers.TabIndex = 3;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(238, 219);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Clear Ticket";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // lblLine
-            // 
-            this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(6, 37);
-            this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(30, 13);
-            this.lblLine.TabIndex = 1;
-            this.lblLine.Text = "Line:";
-            // 
-            // cmbNumber2
-            // 
-            this.cmbNumber2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNumber2.FormattingEnabled = true;
-            this.cmbNumber2.Location = new System.Drawing.Point(59, 7);
-            this.cmbNumber2.Name = "cmbNumber2";
-            this.cmbNumber2.Size = new System.Drawing.Size(116, 21);
-            this.cmbNumber2.TabIndex = 2;
-            // 
-            // btnAddToLine
-            // 
-            this.btnAddToLine.Location = new System.Drawing.Point(182, 5);
-            this.btnAddToLine.Name = "btnAddToLine";
-            this.btnAddToLine.Size = new System.Drawing.Size(75, 23);
-            this.btnAddToLine.TabIndex = 3;
-            this.btnAddToLine.Text = "Add to Line";
-            this.btnAddToLine.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(23, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(46, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(23, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(82, 55);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(23, 20);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(119, 55);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(23, 20);
-            this.textBox4.TabIndex = 7;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(156, 55);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(23, 20);
-            this.textBox5.TabIndex = 8;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(193, 55);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(23, 20);
-            this.textBox6.TabIndex = 9;
-            // 
-            // btnClearLine
-            // 
-            this.btnClearLine.Location = new System.Drawing.Point(232, 53);
-            this.btnClearLine.Name = "btnClearLine";
-            this.btnClearLine.Size = new System.Drawing.Size(75, 23);
-            this.btnClearLine.TabIndex = 10;
-            this.btnClearLine.Text = "Clear Line";
-            this.btnClearLine.UseVisualStyleBackColor = true;
-            // 
-            // btnAddLine
-            // 
-            this.btnAddLine.Location = new System.Drawing.Point(232, 82);
-            this.btnAddLine.Name = "btnAddLine";
-            this.btnAddLine.Size = new System.Drawing.Size(75, 23);
-            this.btnAddLine.TabIndex = 11;
-            this.btnAddLine.Text = "Add Line";
-            this.btnAddLine.UseVisualStyleBackColor = true;
-            // 
-            // listNumbers2
-            // 
-            this.listNumbers2.FormattingEnabled = true;
-            this.listNumbers2.Location = new System.Drawing.Point(9, 117);
-            this.listNumbers2.Name = "listNumbers2";
-            this.listNumbers2.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listNumbers2.Size = new System.Drawing.Size(298, 134);
-            this.listNumbers2.TabIndex = 12;
-            // 
-            // btnClearTicket
-            // 
-            this.btnClearTicket.Location = new System.Drawing.Point(232, 261);
-            this.btnClearTicket.Name = "btnClearTicket";
-            this.btnClearTicket.Size = new System.Drawing.Size(75, 24);
-            this.btnClearTicket.TabIndex = 13;
-            this.btnClearTicket.Text = "Clear Ticket";
-            this.btnClearTicket.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
