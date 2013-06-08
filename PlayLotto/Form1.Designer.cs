@@ -265,6 +265,7 @@
             this.cmbNumber2.Name = "cmbNumber2";
             this.cmbNumber2.Size = new System.Drawing.Size(116, 21);
             this.cmbNumber2.TabIndex = 2;
+            this.cmbNumber2.SelectedIndexChanged += new System.EventHandler(this.cmbNumber2_SelectedIndexChanged);
             // 
             // lblLine
             // 
@@ -316,7 +317,7 @@
             // mnuClearTicket
             // 
             this.mnuClearTicket.Name = "mnuClearTicket";
-            this.mnuClearTicket.Size = new System.Drawing.Size(152, 22);
+            this.mnuClearTicket.Size = new System.Drawing.Size(136, 22);
             this.mnuClearTicket.Text = "Clear Ticket";
             this.mnuClearTicket.Click += new System.EventHandler(this.btnClear_Click);
             // 

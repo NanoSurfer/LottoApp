@@ -70,30 +70,30 @@ namespace PlayLotto
         private void btnPlay_Click(object sender, EventArgs e)
         {
             Random rand = new Random(); // Random number generator
-            int[] randValues = new int[6]; //Array to hold random values
-            int number = 0;
+            int[] lottoNumbers = new int[6]; //Array to hold random values for the lotto numbers
+            int randomNumber = 0;
 
             int lines = cmbNumbers.SelectedIndex + 1; // Assign the selected index of cmbNumbers to numLines (+1 because the index starts at 0)
 
-            for (int i = 0; i < lines; i++) // Loop through the number of lines
+            for (int i = 0; i < lines; i++) // Loop through the number of lines chosen from the cmbNumbers
             {
-                int lottoNumbers = 0;
+                int lottoNumberIndex = 0;
 
-                while (lottoNumbers < 6)
+                while (lottoNumberIndex < 6)
                 {
-                    number = rand.Next(1, 49);
-                    if (Array.IndexOf(randValues, number) == -1) //
+                    randomNumber = rand.Next(1, 49);
+                    if (Array.IndexOf(lottoNumbers, randomNumber) == -1) //
                     {
-                        randValues[lottoNumbers] = number;
-                        lottoNumbers++;
+                        lottoNumbers[lottoNumberIndex] = randomNumber;
+                        lottoNumberIndex++;
                     }
                 }
 
-                Array.Sort(randValues);
+                Array.Sort(lottoNumbers);
 
                 // Display the values in the list box area
-                listNumbers.Items.Add(randValues[0] + "\t" + randValues[1] + "\t" + randValues[2] +
-                        "\t" + randValues[3] + "\t" + randValues[4] + "\t" + randValues[5]);
+                listNumbers.Items.Add(lottoNumbers[0] + "\t" + lottoNumbers[1] + "\t" + lottoNumbers[2] +
+                        "\t" + lottoNumbers[3] + "\t" + lottoNumbers[4] + "\t" + lottoNumbers[5]);
             }
         }
 
@@ -104,8 +104,22 @@ namespace PlayLotto
 
         private void btnAddToLine_Click(object sender, EventArgs e)
         {
-            //textBox1.Text = cmbNumber2.Items.Add();
-            //cmbNumber2.Items.IndexOf();
+            // Argh! Damit this is annoying.. to be continued.....
+            textBox1.Text = cmbNumber2.GetItemText(cmbNumber2.SelectedIndex + 1);
+            cmbNumber2.GetContainerControl();
+            textBox2.Text = cmbNumber2.GetItemText(cmbNumber2.SelectedIndex + 1);
+            textBox3.Text = cmbNumber2.GetItemText(cmbNumber2.SelectedIndex + 1);
+            textBox4.Text = cmbNumber2.GetItemText(cmbNumber2.SelectedIndex + 1);
+            textBox5.Text = cmbNumber2.GetItemText(cmbNumber2.SelectedIndex + 1);
+            textBox6.Text = cmbNumber2.GetItemText(cmbNumber2.SelectedIndex + 1);
+        }
+
+        private void cmbNumber2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+
+            }
+
         }
     }
 }
