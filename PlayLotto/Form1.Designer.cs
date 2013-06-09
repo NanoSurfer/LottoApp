@@ -170,6 +170,7 @@
             this.btnClearTicket.TabIndex = 13;
             this.btnClearTicket.Text = "Clear Ticket";
             this.btnClearTicket.UseVisualStyleBackColor = true;
+            this.btnClearTicket.Click += new System.EventHandler(this.btnClearTicket_Click);
             // 
             // listNumbers2
             // 
@@ -188,6 +189,7 @@
             this.btnAddLine.TabIndex = 11;
             this.btnAddLine.Text = "Add Line";
             this.btnAddLine.UseVisualStyleBackColor = true;
+            this.btnAddLine.Click += new System.EventHandler(this.btnAddLine_Click);
             // 
             // btnClearLine
             // 
@@ -197,6 +199,7 @@
             this.btnClearLine.TabIndex = 10;
             this.btnClearLine.Text = "Clear Line";
             this.btnClearLine.UseVisualStyleBackColor = true;
+            this.btnClearLine.Click += new System.EventHandler(this.btnClearLine_Click);
             // 
             // textBox6
             // 
@@ -265,7 +268,6 @@
             this.cmbNumber2.Name = "cmbNumber2";
             this.cmbNumber2.Size = new System.Drawing.Size(116, 21);
             this.cmbNumber2.TabIndex = 2;
-            this.cmbNumber2.SelectedIndexChanged += new System.EventHandler(this.cmbNumber2_SelectedIndexChanged);
             // 
             // lblLine
             // 
@@ -335,12 +337,14 @@
             this.mnuClearLine.Name = "mnuClearLine";
             this.mnuClearLine.Size = new System.Drawing.Size(141, 22);
             this.mnuClearLine.Text = "Clear Line";
+            this.mnuClearLine.Click += new System.EventHandler(this.btnClearLine_Click);
             // 
             // mnuClearTickets
             // 
             this.mnuClearTickets.Name = "mnuClearTickets";
-            this.mnuClearTickets.Size = new System.Drawing.Size(141, 22);
+            this.mnuClearTickets.Size = new System.Drawing.Size(152, 22);
             this.mnuClearTickets.Text = "Clear Tickets";
+            this.mnuClearTickets.Click += new System.EventHandler(this.btnClearTicket_Click);
             // 
             // Form1
             // 
