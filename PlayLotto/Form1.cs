@@ -208,7 +208,7 @@ namespace PlayLotto
         // A method to add the text box numbers to my list box
         private void btnAddLine_Click(object sender, EventArgs e)
         {
-            int[] lottoNumbers = new int[6]; // local variable lottoNumbers, not the same as abaove!
+            int[] lottoNumbers = new int[6]; // local variable lottoNumbers, not the same as above!
 
             if (textBox6.Text == "") // If this text box is empty, then all the box's are not complete
             {
