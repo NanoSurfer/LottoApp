@@ -119,7 +119,9 @@ namespace PlayLotto
                 case 1:
                     textBox1.Text = cmbNumber2.Text; // Add the selected text from the combo box to the text Box
                     cmbNumber2.Items.Remove(cmbNumber2.SelectedItem); // Remove the selected item from the combo box
-                    if (textBox1.Text == "")
+                    // If the user clicks the "Add to Line" button twice, then 
+                    // stop it and reverse the global count so it can be entered again.
+                    if (textBox1.Text == "") 
                     {
                         MessageBox.Show("Error, skipping a box not allowed!");
                         count--;
@@ -176,13 +178,14 @@ namespace PlayLotto
             }
         }
 
+        // Method to clear the text box's and reset the lines
         private void btnClearLine_Click(object sender, EventArgs e)
         {
-            resetMyTextBoxAndLines(); // I used a method so I can call it twice!
+            resetMyTextAndCombo(); // I used a method so I can call it multiple times!
         }
 
         // A method to reset my text box's and comboBox
-        private void resetMyTextBoxAndLines()
+        private void resetMyTextAndCombo()
         {
             textBox1.Text = "";
             textBox2.Text = "";
@@ -202,15 +205,19 @@ namespace PlayLotto
             count = 1; // Reset the counter!
         }
 
+        // A method to add the text box numbers to my list box
         private void btnAddLine_Click(object sender, EventArgs e)
         {
-            int[] lottoNumbers = new int[6]; // local variable lottonumbers, not the same as abaove!
+            int[] lottoNumbers = new int[6]; // local variable lottoNumbers, not the same as abaove!
 
-            if (textBox6.Text == "")
+            if (textBox6.Text == "") // If this text box is empty, then all the box's are not complete
             {
                 MessageBox.Show("Please fill all numbers first!");
             }
-            else
+
+            // If textBox6 is not empty, then its logical to assume that all values 
+            // have been entered 
+            else 
             {
                 // Assign values from the text boxes into the lottoNumbers array
                 lottoNumbers[0] = int.Parse(textBox1.Text); 
@@ -220,7 +227,7 @@ namespace PlayLotto
                 lottoNumbers[4] = int.Parse(textBox5.Text);
                 lottoNumbers[5] = int.Parse(textBox6.Text);
 
-                resetMyTextBoxAndLines(); // Rest the text box's and reset the comboBox
+                resetMyTextAndCombo(); // Reset the text box's and reset the comboBox
 
                 Array.Sort(lottoNumbers); // Sort the array before displaying it
 
@@ -234,7 +241,7 @@ namespace PlayLotto
         private void btnClearTicket_Click(object sender, EventArgs e)
         {
             listNumbers2.Items.Clear();
-            resetMyTextBoxAndLines();
+            resetMyTextAndCombo();
         }
     }
 }
