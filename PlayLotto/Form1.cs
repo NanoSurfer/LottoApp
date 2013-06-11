@@ -12,7 +12,7 @@ namespace PlayLotto
 {
     public partial class Form1 : Form
     {
-        int count = 1; // Counter for adding values to my lotto text box's
+        int count = 1; // Global counter
 
         public Form1()
         {
@@ -83,11 +83,12 @@ namespace PlayLotto
 
                 while (lottoNumberIndex < 6)
                 {
-                    randomNumber = rand.Next(1, 49);
-                    if (Array.IndexOf(lottoNumbers, randomNumber) == -1) //
+                    randomNumber = rand.Next(1, 49); // First generate a random number
+                    if (Array.IndexOf(lottoNumbers, randomNumber) == -1) // If the randomNumber element is the same in the array, it returns -1, then execute the code again
+
                     {
                         lottoNumbers[lottoNumberIndex] = randomNumber;
-                        lottoNumberIndex++;
+                        lottoNumberIndex++; // increment the index
                     }
                 }
 
@@ -105,37 +106,38 @@ namespace PlayLotto
             listNumbers.Items.Clear();
         }
 
+        // Method for the buttonAddToLine click event (what happens when you click the button)
         private void btnAddToLine_Click(object sender, EventArgs e)
-        {            
-            if (cmbNumber2.Text == "")
+        {
+            if (cmbNumber2.Text == "") // If you try and clicck without selecting number first, display error
             {
-                MessageBox.Show("Error, skipping a box not allowed!");
+                MessageBox.Show("Please select a number from the drop down!");
             }
             else
-            { 
-                switch (count)
             {
-                case 1:
-                    textBox1.Text = cmbNumber2.Text; // Add the selected text from the combo box to the text Box             
-                    break;
-                case 2:
-                    textBox2.Text = cmbNumber2.Text;       
-                    break;
-                case 3:
-                    textBox3.Text = cmbNumber2.Text;
-                    break;
-                case 4:
-                    textBox4.Text = cmbNumber2.Text;
-                    break;
-                case 5:
-                    textBox5.Text = cmbNumber2.Text;
-                    break;
-                case 6:
-                    textBox6.Text = cmbNumber2.Text;
-                    break;
-                default:
-                    MessageBox.Show("There are already 6 numbers!");
-                    break;
+                switch (count) // I used a count to register the button press
+                {
+                    case 1:
+                        textBox1.Text = cmbNumber2.Text; // Add the selected text from the combo box to the text Box             
+                        break;
+                    case 2:
+                        textBox2.Text = cmbNumber2.Text;
+                        break;
+                    case 3:
+                        textBox3.Text = cmbNumber2.Text;
+                        break;
+                    case 4:
+                        textBox4.Text = cmbNumber2.Text;
+                        break;
+                    case 5:
+                        textBox5.Text = cmbNumber2.Text;
+                        break;
+                    case 6:
+                        textBox6.Text = cmbNumber2.Text;
+                        break;
+                    default:
+                        MessageBox.Show("There are already 6 numbers!");
+                        break;
                 }
                 count++; // after method call, increment the global counter
                 cmbNumber2.Items.Remove(cmbNumber2.SelectedItem); // Remove the selected item from the combo box
