@@ -106,75 +106,39 @@ namespace PlayLotto
         }
 
         private void btnAddToLine_Click(object sender, EventArgs e)
-        {
-            addToTextBoxes(); // When the button is clicked, call this method
-            count++; // after method call, increment the global counter
-        }
-
-        // Method to add values to text box's
-        private void addToTextBoxes()
-        {
-            switch (count)
+        {            
+            if (cmbNumber2.Text == "")
+            {
+                MessageBox.Show("Error, skipping a box not allowed!");
+            }
+            else
+            { 
+                switch (count)
             {
                 case 1:
-                    textBox1.Text = cmbNumber2.Text; // Add the selected text from the combo box to the text Box
-                    cmbNumber2.Items.Remove(cmbNumber2.SelectedItem); // Remove the selected item from the combo box
-                    // If the user clicks the "Add to Line" button twice, then 
-                    // stop it and reverse the global count so it can be entered again.
-                    if (textBox1.Text == "") 
-                    {
-                        MessageBox.Show("Error, skipping a box not allowed!");
-                        count--;
-                    }
+                    textBox1.Text = cmbNumber2.Text; // Add the selected text from the combo box to the text Box             
                     break;
                 case 2:
-                    textBox2.Text = cmbNumber2.Text; 
-                    cmbNumber2.Items.Remove(cmbNumber2.SelectedItem);
-                    if (textBox2.Text == "")
-                    {
-                        MessageBox.Show("Error, skipping a box not allowed!");
-                        count--;
-                    }
+                    textBox2.Text = cmbNumber2.Text;       
                     break;
                 case 3:
                     textBox3.Text = cmbNumber2.Text;
-                    cmbNumber2.Items.Remove(cmbNumber2.SelectedItem);
-                    if (textBox3.Text == "")
-                    {
-                        MessageBox.Show("Error, skipping a box not allowed!");
-                        count--;
-                    }
                     break;
                 case 4:
                     textBox4.Text = cmbNumber2.Text;
-                    cmbNumber2.Items.Remove(cmbNumber2.SelectedItem);
-                    if (textBox4.Text == "")
-                    {
-                        MessageBox.Show("Error, skipping a box not allowed!");
-                        count--;
-                    }
                     break;
                 case 5:
                     textBox5.Text = cmbNumber2.Text;
-                    cmbNumber2.Items.Remove(cmbNumber2.SelectedItem);
-                    if (textBox5.Text == "")
-                    {
-                        MessageBox.Show("Error, skipping a box not allowed!");
-                        count--;
-                    }
                     break;
                 case 6:
                     textBox6.Text = cmbNumber2.Text;
-                    cmbNumber2.Items.Remove(cmbNumber2.SelectedItem);
-                    if (textBox6.Text == "")
-                    {
-                        MessageBox.Show("Error, skipping a box not allowed!");
-                        count--;
-                    }
                     break;
                 default:
                     MessageBox.Show("There are already 6 numbers!");
                     break;
+                }
+                count++; // after method call, increment the global counter
+                cmbNumber2.Items.Remove(cmbNumber2.SelectedItem); // Remove the selected item from the combo box
             }
         }
 
