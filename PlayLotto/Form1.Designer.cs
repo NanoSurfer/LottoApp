@@ -120,6 +120,7 @@
             // 
             // cmbNumbers
             // 
+            this.cmbNumbers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNumbers.FormattingEnabled = true;
             this.cmbNumbers.Location = new System.Drawing.Point(99, 7);
             this.cmbNumbers.Name = "cmbNumbers";
@@ -342,7 +343,7 @@
             // mnuClearTickets
             // 
             this.mnuClearTickets.Name = "mnuClearTickets";
-            this.mnuClearTickets.Size = new System.Drawing.Size(152, 22);
+            this.mnuClearTickets.Size = new System.Drawing.Size(141, 22);
             this.mnuClearTickets.Text = "Clear Tickets";
             this.mnuClearTickets.Click += new System.EventHandler(this.btnClearTicket_Click);
             // 

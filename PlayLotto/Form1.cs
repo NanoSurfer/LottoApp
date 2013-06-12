@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Programmer: Shawn Brewis
+ * Date: 12/06/2012
+ * Purpose: The purpose of this application is to display a random set of lotto numbers for a user to use to play a lotto
+ *          game as well as the option for the user to select their own numbers.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +20,7 @@ namespace PlayLotto
 {
     public partial class Form1 : Form
     {
-        int count = 1; // Global counter
+        int count = 1; // Global counter (used to add numbers to my text box's on my second tab)
 
         public Form1()
         {
@@ -83,11 +91,11 @@ namespace PlayLotto
 
                 while (lottoNumberIndex < 6)
                 {
-                    randomNumber = rand.Next(1, 49); // First generate a random number
-                    if (Array.IndexOf(lottoNumbers, randomNumber) == -1) // If the randomNumber element is the same in the array, it returns -1, then execute the code again
+                    randomNumber = rand.Next(1, 50); // First generate a random number between 1 and 49
+                    if (Array.IndexOf(lottoNumbers, randomNumber) == -1) // If the randomNumber element is the same it returns -1, then execute the code again
 
                     {
-                        lottoNumbers[lottoNumberIndex] = randomNumber;
+                        lottoNumbers[lottoNumberIndex] = randomNumber; // Assign the random number to the index in the array
                         lottoNumberIndex++; // increment the index
                     }
                 }
@@ -109,7 +117,7 @@ namespace PlayLotto
         // Method for the buttonAddToLine click event (what happens when you click the button)
         private void btnAddToLine_Click(object sender, EventArgs e)
         {
-            if (cmbNumber2.Text == "") // If you try and clicck without selecting number first, display error
+            if (cmbNumber2.Text == "") // If you try and click without selecting number first, display error
             {
                 MessageBox.Show("Please select a number from the drop down!");
             }
@@ -136,10 +144,10 @@ namespace PlayLotto
                         textBox6.Text = cmbNumber2.Text;
                         break;
                     default:
-                        MessageBox.Show("There are already 6 numbers!");
+                        MessageBox.Show("There are already 6 numbers!"); // If all the box's are filled, then display this message
                         break;
                 }
-                count++; // after method call, increment the global counter
+                count++; // increment the global counter
                 cmbNumber2.Items.Remove(cmbNumber2.SelectedItem); // Remove the selected item from the combo box
             }
         }
@@ -206,8 +214,8 @@ namespace PlayLotto
         // Reset the listbox and call the resetMyTextBoxAndLines() method as well (to clear everything!)
         private void btnClearTicket_Click(object sender, EventArgs e)
         {
-            listNumbers2.Items.Clear();
-            resetMyTextAndCombo();
+            listNumbers2.Items.Clear(); // Clear the list box
+            resetMyTextAndCombo(); // call the reset method again
         }
     }
 }
